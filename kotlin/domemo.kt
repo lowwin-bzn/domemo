@@ -1,29 +1,15 @@
 import java.util.*
 
 class Player(val name:String, var pieces:MutableList<Int>){
-    fun show(){
-        println("${name}: ${pieces}")
-    }
-
-    fun hasPiece(num:Int): Boolean{
-        return pieces.any{piece -> piece == num}
-    }
-
-    fun remove(num:Int){
-        pieces.remove(num)
-    }
-
-    fun isAllOpen(): Boolean{
-        return pieces.count() == 0
-    }
+    fun show() = println("${name}: ${pieces}")
+    fun hasPiece(num:Int) = pieces.any{piece -> piece == num}
+    fun remove(num:Int) = pieces.remove(num)
+    fun isAllOpen() = pieces.count() == 0
 }
 
 class SimpleRandomPicker{
     val rand = Random()
-
-    fun pick(): Int{
-        return rand.nextInt(7) + 1
-    }
+    fun pick() = rand.nextInt(7) + 1
 }
 
 fun handPieceCount(playerCount:Int) = when(playerCount){
